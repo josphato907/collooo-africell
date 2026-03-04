@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from africellsl.onrender.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2026 16:29:24 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myAfricell – Sierra Leone's Trusted Mobile Wallet & Loans</title>
+    <meta name="description" content="myAfricell – Fast loans with AfriCredit, airtime & data, bill payments, transfers. Dial *161# or download the myAfricell App today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f8f9fa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background: #AD1457;
+            /* darker magenta-purple for header */
+            color: white;
+            padding: 1.2rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-my {
+            color: #F8BBD0;
+        }
+        /* very light pinkish-purple accent */
+        
+        .logo-africell {
+            color: white;
+        }
+        
+        main {
+            flex: 1;
+            padding: 2rem 5% 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 2.8rem);
+            font-weight: 700;
+            color: #AD1457;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: clamp(1.1rem, 3.5vw, 1.25rem);
+            color: #444;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .notification-banner {
+            background: #FCE4EC;
+            border: 1px solid #F8BBD0;
+            border-radius: 12px;
+            padding: 1.4rem 1.8rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .notification-banner strong {
+            color: #C2185B;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        
+        .loan-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #AD1457;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .slider-group {
+            margin-bottom: 2.2rem;
+        }
+        
+        .slider-label-row {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 0.6rem;
+        }
+        
+        .slider-value {
+            color: #C2185B;
+            font-weight: 700;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            outline: none;
+            -webkit-appearance: button;
+            /* Vendor prefix */
+            -moz-appearance: button;
+            /* Vendor prefix */
+            appearance: button;
+            /* Standard property */
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #C2185B;
+            /* matching app's magenta-purple */
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(194, 24, 91, 0.3);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #C2185B;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(194, 24, 91, 0.3);
+        }
+        
+        .range-scale {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .monthly-result {
+            background: #FCE4EC;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 1.5rem 0 2rem;
+            border: 1px solid #F8BBD0;
+        }
+        
+        .monthly-label {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .monthly-amount {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #C2185B;
+        }
+        
+        .cta-button {
+            width: 100%;
+            padding: 1.15rem;
+            background: #C2185B;
+            /* vibrant magenta-purple from app */
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.18rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: #AD1457;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(194, 24, 91, 0.25);
+        }
+        
+        .trust-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            text-align: center;
+            color: #444;
+            font-size: 0.95rem;
+            max-width: 160px;
+        }
+        
+        .trust-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
+            color: #C2185B;
+        }
+        
+        footer {
+            background: #AD1457;
+            color: #ddd;
+            padding: 2rem 5% 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 4px solid #F8BBD0;
+        }
+        
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        @media (min-width: 768px) {
+            .loan-card {
+                padding: 2.8rem 3rem;
+                max-width: 620px;
+            }
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+        /* Testimonials Toast Notifications */
+        
+        #toastContainer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-end;
+            pointer-events: none;
+        }
+        
+        .toast {
+            background: white;
+            border-left: 5px solid #C2185B;
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            max-width: 320px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #333;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .toast strong {
+            color: #C2185B;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .toast .location {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo"><span class="logo-my">my</span><span class="logo-africell">Africell</span></div>
+        </div>
+    </header>
+    <main>
+        <div class="hero">
+            <h1>Sierra Leone's Favourite Mobile Wallet & Loans</h1>
+            <p>Fast AfriCredit loans • Instant airtime & data • Bill payments • Transfers & more. Dial *161# or download the myAfricell App today.</p>
+        </div>
+
+        <!-- Professional Notification Banner -->
+        <div class="notification-banner">
+            <strong>Loan Eligibility Requirement</strong> To qualify for AfriCredit loans, your Afrimoney account must be active with regular usage and a minimum balance of NLe 50. This helps verify your account and activate loan access — it is not deducted
+            during application or disbursement.
+        </div>
+
+        <div class="loan-card">
+            <h2 class="card-title">Calculate Your AfriCredit Loan</h2>
+            <div class="slider-group">
+                <div class="slider-label-row">
+                    <span>Loan Amount</span>
+                    <span class="slider-value" id="amountValue">NLe 7,000</span>
+                </div>
+                <input type="range" min="500" max="7000" value="7000" step="100" id="amountSlider">
+                <div class="range-scale"><span>NLe 500</span><span>NLe 7,000</span></div>
+            </div>
+            <div class="slider-group">
+                <div class="slider-label-row">
+                    <span>Loan Term</span>
+                    <span class="slider-value" id="termValue">3 months</span>
+                </div>
+                <input type="range" min="1" max="12" step="1" value="3" id="termSlider">
+                <div class="range-scale"><span>1 month</span><span>12 months</span></div>
+            </div>
+            <div class="monthly-result">
+                <div class="monthly-label">Estimated Monthly Repayment</div>
+                <div class="monthly-amount" id="paymentAmount">NLe 2,500.00</div>
+            </div>
+            <button class="cta-button" id="applyBtn">Apply Now – Instant Approval</button>
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <div class="trust-icon">⚡</div>
+                    Approval in minutes
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🔒</div>
+                    Secure & Reliable
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🏆</div>
+                    Rewards on transactions
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        © 2026 Africell Sierra Leone. Licensed Mobile Money & Financial Services Provider.<br> Member of the relevant regulatory schemes • Terms & Conditions apply • Dial *161# or visit africell.sl
+    </footer>
+
+    <!-- Toast Container for Testimonials -->
+    <div id="toastContainer"></div>
+
+    <script>
+        const amountSlider = document.getElementById('amountSlider');
+        const termSlider = document.getElementById('termSlider');
+        const amountValue = document.getElementById('amountValue');
+        const termValue = document.getElementById('termValue');
+        const paymentAmount = document.getElementById('paymentAmount');
+
+        function updateCalculator() {
+            const amount = parseFloat(amountSlider.value);
+            const months = parseFloat(termSlider.value);
+            amountValue.textContent = 'NLe ' + amount.toLocaleString();
+            termValue.textContent = months + (months === 1 ? ' month' : ' months');
+
+            const annualRate = 0.18; // example microloan rate
+            const monthlyRate = annualRate / 12;
+
+            if (months <= 0 || isNaN(months)) {
+                paymentAmount.textContent = 'NLe ' + amount.toFixed(2);
+                return;
+            }
+
+            const power = Math.pow(1 + monthlyRate, months);
+            const monthlyPayment = amount * (monthlyRate * power) / (power - 1);
+            paymentAmount.textContent = 'NLe ' + monthlyPayment.toFixed(2);
+        }
+
+        updateCalculator();
+        amountSlider.addEventListener('input', updateCalculator);
+        termSlider.addEventListener('input', updateCalculator);
+
+        document.getElementById('applyBtn').addEventListener('click', () => {
+            localStorage.setItem('loanAmount', amountSlider.value);
+            window.location.href = 'details.html';
+        });
+
+        /* Positive Testimonials Toasts – Sierra Leone version */
+        const testimonials = [{
+            text: "Got my AfriCredit loan instantly! Thank you myAfricell!",
+            name: "Fatima K.",
+            location: "Freetown"
+        }, {
+            text: "Fast approval and money in my Afrimoney wallet right away. Great service!",
+            name: "Mohamed S.",
+            location: "Bo"
+        }, {
+            text: "myAfricell made borrowing so easy when I needed cash fast.",
+            name: "Aminata J.",
+            location: "Kenema"
+        }, {
+            text: "Approved quickly and funds came immediately. Real lifesaver!",
+            name: "Alpha B.",
+            location: "Makeni"
+        }, {
+            text: "Reliable, secure and super fast. Highly recommend!",
+            name: "Zainab T.",
+            location: "Koidu"
+        }, {
+            text: "Best loan experience – instant disbursement as promised.",
+            name: "Ibrahim M.",
+            location: "Lunsar"
+        }, {
+            text: "Quick process with no stress. myAfricell delivers!",
+            name: "Mariama D.",
+            location: "Port Loko"
+        }, {
+            text: "Got the loan without delay. Very happy!",
+            name: "Saidu K.",
+            location: "Kambia"
+        }, {
+            text: "Excellent – money arrived when I needed it most.",
+            name: "Hawa S.",
+            location: "Magburaka"
+        }, {
+            text: "Thank you myAfricell! Perfect solution for urgent needs.",
+            name: "Abdulai C.",
+            location: "Pujehun"
+        }];
+
+        const toastContainer = document.getElementById('toastContainer');
+        let currentIndex = 0;
+
+        function showNextToast() {
+            if (toastContainer.children.length >= 3) return;
+
+            const testimonial = testimonials[currentIndex];
+            const toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML = `
+            <strong>${testimonial.text}</strong>
+            <div>- ${testimonial.name}</div>
+            <div class="location">${testimonial.location}, Sierra Leone</div>
+        `;
+
+            toastContainer.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 100);
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    if (toast.parentNode) toast.parentNode.removeChild(toast);
+                }, 600);
+            }, 8000);
+
+            currentIndex = (currentIndex + 1) % testimonials.length;
+        }
+
+        setTimeout(() => {
+            showNextToast();
+            setInterval(showNextToast, 10000);
+        }, 5000);
+    </script>
+</body>
+
+<!-- Mirrored from africellsl.onrender.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2026 16:29:24 GMT -->
+
+</html>

